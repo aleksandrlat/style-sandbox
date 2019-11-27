@@ -1,0 +1,11 @@
+@import "helpers";
+
+.wrapper {
+  @include input;
+  @include rounded(10px);
+  border: 1px solid $grey;
+}
+
+.error-message {
+  color: red;
+}
