@@ -27,7 +27,7 @@ module.exports = {
             options: {
               localsConvention: "camelCase",
               modules: {
-                localIdentName: "[path][name]__[local]--[hash:base64:5]"
+                localIdentName: "[path][name]__[local]"
               },
               importLoaders: 1
             }

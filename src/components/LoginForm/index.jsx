@@ -6,15 +6,13 @@ import Input from "../Input/index.jsx"
 import Button from "../Button/index.jsx"
 import style from "./style.scss"
 
-function LoginForm({ labelClassName }) {
+function LoginForm({ className }) {
   return (
-    <form className={style.wrapper}>
-      <Label className={classNames(style.label, labelClassName)}>Email</Label>
+    <form className={classNames(style.wrapper, className)}>
+      <Label className={style.label}>Email</Label>
       <Input />
 
-      <Label className={classNames(style.label, labelClassName)}>
-        Password
-      </Label>
+      <Label className={style.label}>Password</Label>
       <Input />
 
       <Button>Login</Button>

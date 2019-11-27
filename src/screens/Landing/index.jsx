@@ -8,7 +8,7 @@ function LandingScreen({ children }) {
     <div>
       <h1>Landing Screen</h1>
 
-      <LoginForm labelClassName={style.label} />
+      <LoginForm className={style.form} />
     </div>
   )
 }
