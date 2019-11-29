@@ -27,7 +27,24 @@ module.exports = {
             options: {
               localsConvention: "camelCaseOnly",
               modules: {
-                localIdentName: "[path][name]__[local]",
+                // generates readable unique class names based on file path
+                getLocalIdent: (context, localIdentName, localName, options) => {
+                  // generates class name relative to path defined in context below
+                  const relative = path.relative(options.context, context.resourcePath)
+                  const parsed = path.parse(relative)
+
+                  const arr = parsed.dir.split(path.sep).filter(p => p !== '..')
+                  if (parsed.name !== 'style' && parsed.name !== arr[arr.length - 1]) {
+                    arr.push(parsed.name)
+                  }
+
+                  let result = arr.join('-')
+                  if (localName !== 'wrapper') {
+                    result = `${result}__${localName}`
+                  }
+
+                  return result
+                },
                 context: path.resolve(__dirname, 'src/components'),
               },
               importLoaders: 1
