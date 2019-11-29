@@ -1,5 +1,6 @@
 @import "helpers";
+@value wrapper from '../../components/Label/style.scss';
 
-.form > :global(.src-components-Label-style__wrapper) {
+.form > .wrapper {
   color: blue;
 }

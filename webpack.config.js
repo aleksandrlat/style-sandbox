@@ -25,9 +25,10 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              localsConvention: "camelCase",
+              localsConvention: "camelCaseOnly",
               modules: {
-                localIdentName: "[path][name]__[local]"
+                localIdentName: "[path][name]__[local]",
+                context: path.resolve(__dirname, 'src/components'),
               },
               importLoaders: 1
             }
