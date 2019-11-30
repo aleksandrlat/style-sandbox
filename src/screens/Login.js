@@ -1,6 +1,6 @@
 import React from "react"
 
-import LoginForm from "../../components/LoginForm/index.jsx"
+import LoginForm from "../components/LoginForm"
 
 function LoginScreen() {
   return (

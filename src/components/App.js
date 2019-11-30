@@ -1,9 +1,7 @@
 import React from "react"
 
-import LoginScreen from "../../screens/Login/index.jsx"
-import LandingScreen from "../../screens/Landing/index.jsx"
-
-import style from "./style.scss"
+import LoginScreen from "../screens/Login"
+import LandingScreen from "../screens/Landing"
 
 function App() {
   return (

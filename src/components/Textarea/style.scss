@@ -1,7 +1,0 @@
-@import "helpers";
-
-.wrapper {
-  @include input;
-  @include rounded;
-  border: 1px solid $grey;
-}

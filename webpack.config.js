@@ -1,47 +1,20 @@
 const path = require("path")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
-  entry: "./src/index.jsx",
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
-  ],
+  entry: "./src/index.js",
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         use: "babel-loader",
         exclude: /node_modules/
       },
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          {
-            loader: "css-loader",
-            options: {
-              localsConvention: "camelCase",
-              modules: {
-                localIdentName: "[path][name]__[local]"
-              },
-              importLoaders: 1
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sassOptions: {
-                includePaths: [path.resolve("src", "stylesheets")]
-              }
-            }
-          }
-        ]
-      }
     ]
-  }
+  },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 1000,
+    ignored: /node_modules/,
+    poll: 1000,
+  },
 }
